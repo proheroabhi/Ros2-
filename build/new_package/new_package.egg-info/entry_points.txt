@@ -1,0 +1,6 @@
+[console_scripts]
+hello = new_package.hello:main
+sensor_data_publisher = new_package.sensor_data_publisher:main
+servo_call = new_package.servo_motor_service:main
+subscriber = new_package.subscribe_data:main
+
