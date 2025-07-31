@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from std_srvs.srv import Trigger
-#import RPi.GPIO as GPIO  # Replace with your GPIO library if different
+import RPi.GPIO as GPIO  # Replace with your GPIO library if different
 
 class ServoMotorService(Node):
     def __init__(self):
@@ -10,16 +10,16 @@ class ServoMotorService(Node):
         self.get_logger().info('Servo Motor Service Node has been started.')
 
         # GPIO setup
-        # self.servo_pin = 18  # Replace with your GPIO pin number
-        # GPIO.setmode(GPIO.BCM)
-        # GPIO.setup(self.servo_pin, GPIO.OUT)
-        # self.pwm = GPIO.PWM(self.servo_pin, 50)  # 50 Hz PWM frequency
-        # self.pwm.start(0)  # Start with 0 duty cycle (stopped)
+        self.servo_pin = 18  # Replace with your GPIO pin number
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(self.servo_pin, GPIO.OUT)
+        self.pwm = GPIO.PWM(self.servo_pin, 50)  # 50 Hz PWM frequency
+        self.pwm.start(0)  # Start with 0 duty cycle (stopped)
 
     def handle_rotate_servo(self, request, response):
         try:
             self.get_logger().info('Rotating servo motor at full speed...')
-            # self.pwm.ChangeDutyCycle(10)  # Adjust duty cycle for full speed (e.g., 10 for clockwise)
+            self.pwm.ChangeDutyCycle(10)  # Adjust duty cycle for full speed (e.g., 10 for clockwise)
             response.success = True
             response.message = 'Servo motor is rotating at full speed.'
         except Exception as e:
@@ -29,8 +29,8 @@ class ServoMotorService(Node):
         return response
 
     def destroy_node(self):
-        # self.pwm.stop()
-        # GPIO.cleanup()
+        self.pwm.stop()
+        GPIO.cleanup()
         super().destroy_node()
 
 def main(args=None):

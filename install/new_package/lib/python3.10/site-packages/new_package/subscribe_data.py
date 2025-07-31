@@ -4,7 +4,13 @@ from std_msgs.msg import Float32
 from rclpy.task import Future
 from std_srvs.srv import Trigger
 
+import requests
+import json
+
 class SensorDataSubscriber(Node):
+    temperature
+    humidity
+
     def __init__(self):
         super().__init__('sensor_data_subscriber')
         self.soil_moisture_subscription = self.create_subscription(
@@ -34,10 +40,40 @@ class SensorDataSubscriber(Node):
         self.get_logger().info(f'Received Soil Moisture: {msg.data}')
 
     def temperature_callback(self, msg):
+        temperature = msg.data
         self.get_logger().info(f'Received Temperature: {msg.data}')
 
     def humidity_callback(self, msg):
+        humidity = msg.data
         self.get_logger().info(f'Received Humidity: {msg.data}')
+
+        # URL of the web page to which you want to send the request
+        url = 'http://192.168.137.1/FarmCS/handlers/receive_sensor_data.php'
+
+        # Create a dictionary with the data you want to send
+        data = {
+        "soil_moisture": 55.2,
+        "temperature": {temperature},
+        "humidity": {humidity},
+        "light_intensity": 1200,
+        "device_id": "FARM_SENSOR_001"
+        }
+
+        # Convert the dictionary to a JSON string
+        json_data = json.dumps(data)
+
+        # Set headers to inform the server that you're sending JSON
+        headers = {
+            'Content-Type': 'application/json'
+        }
+
+        # Send a POST request with the JSON data
+        response = requests.post(url, data=json_data, headers=headers)
+
+        # Print the status code and response from the server
+        print(f"Status Code: {response.status_code}")
+        print(f"Response: {response.text}")
+
         if msg.data < 60.0:
             self.get_logger().info('Humidity is greater than 60. Calling servo motor service...')
             self.call_servo_motor_service()

@@ -10,12 +10,17 @@ class SensorDataPublisher(Node):
         self.humidity_publisher = self.create_publisher(Float32, 'humidity', 10)
         self.timer = self.create_timer(5.0, self.publish_sensor_data)  # Publish every second
         self.get_logger().info('Sensor Data Publisher Node has been started.')
+        
+        # Setup sensors
+        self.DHT_SENSOR = Adafruit_DHT.DHT11
+        self.DHT_PIN = 4  # GPIO Pin for DHT11
 
     def publish_sensor_data(self):
         # Simulated sensor data
         soil_moisture = 45.6  # Example value for soil moisture
-        temperature = 22.3    # Example value for temperature
-        humidity = 55.2       # Example value for humidity
+        # temperature = 22.3    # Example value for temperature
+        # humidity = 55.2       # Example value for humidity
+        humidity, temperature = Adafruit_DHT.read_retry(self.DHT_SENSOR, self.DHT_PIN)
 
         # Publish soil moisture
         soil_moisture_msg = Float32()

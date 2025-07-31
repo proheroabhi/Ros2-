@@ -11,7 +11,7 @@ setup.py
 ../../build/new_package/new_package.egg-info/zip-safe
 new_package/__init__.py
 new_package/hello.py
-new_package/sensor_data_publisher.py
+new_package/irrigation.py
 new_package/servo_motor_service.py
 new_package/subscribe_data.py
 resource/new_package

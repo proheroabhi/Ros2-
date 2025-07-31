@@ -9,7 +9,7 @@ class ServoMotorService(Node):
         self.srv = self.create_service(Trigger, 'rotate_servo', self.handle_rotate_servo)
         self.get_logger().info('Servo Motor Service Node has been started.')
 
-        GPIO setup
+        # GPIO setup
         self.servo_pin = 18  # Replace with your GPIO pin number
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.servo_pin, GPIO.OUT)

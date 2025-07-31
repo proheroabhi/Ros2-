@@ -1,0 +1,5 @@
+  File "/home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package/servo_motor_service.py", line 12
+    GPIO setup
+         ^^^^^
+SyntaxError: invalid syntax
+
