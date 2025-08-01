@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 # GPIO pin where the water flow sensor is connected
-FLOW_SENSOR_PIN = 17  
+FLOW_SENSOR_PIN = 18  
 
 # Flow rate variables
 pulse_count = 0

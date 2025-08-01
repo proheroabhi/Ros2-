@@ -13,7 +13,7 @@ class WaterFlowPublisher(Node):
         self.get_logger().info('Water Flow Data Publisher Node has been started.')
         
         # GPIO pin where the water flow sensor is connected
-        self.FLOW_SENSOR_PIN = 17  
+        self.FLOW_SENSOR_PIN = 18  
 
         # Flow rate variables
         self.pulse_count = 0
