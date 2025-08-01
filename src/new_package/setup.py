@@ -25,7 +25,9 @@ setup(
     'soilData_publisher = new_package.sensors.soil_data_publisher:main',
     'waterFlow_publisher = new_package.sensors.waterFlow_publisher:main',
     'subscriber = new_package.subscribe_data:main',
-    'servo_call = new_package.servo_motor_service:main',
+    'servo_call = new_package.services.servo_service:main',
+    'valve_call = new_package.services.valve_service:main',
+    'pump_call = new_package.services.pump_service:main',
         ],
     },
 )

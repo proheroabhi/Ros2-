@@ -3,9 +3,9 @@ from rclpy.node import Node
 from std_srvs.srv import Trigger
 import RPi.GPIO as GPIO  # Replace with your GPIO library if different
 
-class ServoMotorService(Node):
+class ServoService(Node):
     def __init__(self):
-        super().__init__('servo_motor_service')
+        super().__init__('servo_service')
         self.srv = self.create_service(Trigger, 'rotate_servo', self.handle_rotate_servo)
         self.get_logger().info('Servo Motor Service Node has been started.')
 
@@ -35,7 +35,7 @@ class ServoMotorService(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = ServoMotorService()
+    node = ServoService()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
