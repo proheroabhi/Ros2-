@@ -21,10 +21,11 @@ setup(
     entry_points={
         'console_scripts': [
 	'hello = new_package.hello:main',
-	'DHT_publisher = new_package.sensors.dht_data_publisher:main',
-    'soilData_publisher = new_package.sensors.soil_data_publisher:main',
-    'waterFlow_publisher = new_package.sensors.waterFlow_publisher:main',
+	'DHT = new_package.sensors.dht_data_publisher:main',
+    'soilData = new_package.sensors.soil_data_publisher:main',
+    'waterFlow = new_package.sensors.waterFlow_publisher:main',
     'subscriber = new_package.subscribe_data:main',
+    'rest = new_package.RestApi:main',
     'servo_call = new_package.services.servo_service:main',
     'valve_call = new_package.services.valve_service:main',
     'pump_call = new_package.services.pump_service:main',

@@ -1,0 +1,35 @@
+[0.770s] Invoking command in '/home/hacker/ros2_fws/src/new_package': PYTHONPATH=/home/hacker/ros2_fws/build/new_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/new_package build --build-base /home/hacker/ros2_fws/build/new_package/build install --record /home/hacker/ros2_fws/build/new_package/install.log --single-version-externally-managed install_data
+[0.950s] running egg_info
+[0.950s] writing ../../build/new_package/new_package.egg-info/PKG-INFO
+[0.951s] writing dependency_links to ../../build/new_package/new_package.egg-info/dependency_links.txt
+[0.952s] writing entry points to ../../build/new_package/new_package.egg-info/entry_points.txt
+[0.952s] writing requirements to ../../build/new_package/new_package.egg-info/requires.txt
+[0.952s] writing top-level names to ../../build/new_package/new_package.egg-info/top_level.txt
+[0.954s] reading manifest file '../../build/new_package/new_package.egg-info/SOURCES.txt'
+[0.954s] adding license file 'LICENSE'
+[0.955s] writing manifest file '../../build/new_package/new_package.egg-info/SOURCES.txt'
+[0.955s] running build
+[0.956s] running build_py
+[0.956s] copying new_package/RestApi.py -> /home/hacker/ros2_fws/build/new_package/build/lib/new_package
+[0.956s] copying new_package/services/valve_service.py -> /home/hacker/ros2_fws/build/new_package/build/lib/new_package/services
+[0.958s] running install
+[0.958s] running install_lib
+[0.959s] copying /home/hacker/ros2_fws/build/new_package/build/lib/new_package/RestApi.py -> /home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package
+[0.959s] copying /home/hacker/ros2_fws/build/new_package/build/lib/new_package/services/valve_service.py -> /home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package/services
+[0.961s] byte-compiling /home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package/RestApi.py to RestApi.cpython-310.pyc
+[0.961s] byte-compiling /home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package/services/valve_service.py to valve_service.cpython-310.pyc
+[0.962s] running install_data
+[0.963s] running install_egg_info
+[0.965s] removing '/home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package-0.0.0-py3.10.egg-info' (and everything under it)
+[0.968s] Copying ../../build/new_package/new_package.egg-info to /home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages/new_package-0.0.0-py3.10.egg-info
+[0.970s] running install_scripts
+[0.985s] Installing DHT script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.986s] Installing hello script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.987s] Installing pump_call script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.987s] Installing servo_call script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.987s] Installing soilData script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.988s] Installing subscriber script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.988s] Installing valve_call script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.988s] Installing waterFlow script to /home/hacker/ros2_fws/install/new_package/lib/new_package
+[0.988s] writing list of installed files to '/home/hacker/ros2_fws/build/new_package/install.log'
+[1.010s] Invoked command in '/home/hacker/ros2_fws/src/new_package' returned '0': PYTHONPATH=/home/hacker/ros2_fws/build/new_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hacker/ros2_fws/install/new_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/new_package build --build-base /home/hacker/ros2_fws/build/new_package/build install --record /home/hacker/ros2_fws/build/new_package/install.log --single-version-externally-managed install_data

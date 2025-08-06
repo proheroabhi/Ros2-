@@ -1,8 +1,11 @@
 [console_scripts]
-DHT_publisher = new_package.dht_data_publisher:main
+DHT = new_package.sensors.dht_data_publisher:main
 hello = new_package.hello:main
-servo_call = new_package.servo_motor_service:main
-soilData_publisher = new_package.soil_data_publisher:main
+pump_call = new_package.services.pump_service:main
+rest = new_package.RestApi:main
+servo_call = new_package.services.servo_service:main
+soilData = new_package.sensors.soil_data_publisher:main
 subscriber = new_package.subscribe_data:main
-waterFlow_publisher = new_package.waterFlow_publisher:main
+valve_call = new_package.services.valve_service:main
+waterFlow = new_package.sensors.waterFlow_publisher:main
 
